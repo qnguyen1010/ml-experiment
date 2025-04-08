@@ -50,8 +50,9 @@ agent = ReActAgent.from_tools([search_tool],
                                allow_parallel_tool_calls=True,
                              )
 
-# Querying the Agent
-template = """I live in New Delhi, India. What should be outfit for tomorrow, should I wear sweater or polo tshirt?"""
-response = agent.chat(template)
-print(response)
+if __name__ == "__main__":
+    while True:
+        template = input("Enter your question: ")
+        response = agent.chat(template)
+        print(response)
 
